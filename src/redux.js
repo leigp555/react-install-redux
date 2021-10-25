@@ -28,7 +28,7 @@ const reducer = (state, {type, data}) => {
         }
 
     } else {
-        throw new Error("错误类型")
+        throw new Error("Unknown type")
     }
 }
 const context = React.createContext(null)
