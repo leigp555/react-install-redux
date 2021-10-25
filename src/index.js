@@ -1,2 +1,3 @@
 // import "./useState"
-import "./reducer"
+// import "./reducer"
+import "./redux"
