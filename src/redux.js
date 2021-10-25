@@ -54,8 +54,8 @@ const User = () => {
     }, [dispatcher])
     return (
         <div style={{marginTop: "50px"}}>
-            <span>个人信息:</span>
-            <span>{data.user ? data.user.name : "加载中"}</span>
+            <h3 >个人信息:</h3>
+            <span style={{color:"blue"}}>{data.user ? data.user.name : "加载中"}</span>
         </div>
     )
 }
@@ -69,8 +69,8 @@ const Books = () => {
     }, [dispatcher])
     return (
         <div style={{marginTop: "50px"}}>
-            <span>喜欢的书籍:</span>
-            <ol>
+            <h3>喜欢的书籍:</h3>
+            <ol style={{listStyle:"none",color:"orange"}}>
                 {data.books ? data.books.map(book => <li key={book.id}>{book.name}</li>) : "加载中"}
             </ol>
         </div>
@@ -81,15 +81,14 @@ const Hobby = () => {
 
     useEffect(() => {
             ajax("/hobby").then((response) => {
-                console.log(response)
                 dispatcher({type: "updateHobby", data: response})
             })
         }, [dispatcher]
     )
     return (
         <div style={{marginTop: "50px"}}>
-            <span>个人爱好:</span>
-            {data.hobby ? data.hobby.map(hobby => <li key={hobby.id}>{hobby.name}</li>) : "加载中"}
+            <h3>个人爱好:</h3>
+            <ol style={{color:"red",listStyle:"none"}}> {data.hobby ? data.hobby.map(hobby => <li key={hobby.id}>{hobby.name}</li>) : "加载中"}</ol>
         </div>
     )
 }
