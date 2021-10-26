@@ -2,4 +2,5 @@
 // import "./reducer"
 // import "./redux"
 // import "./useContext"
-import "./useEffect"
+// import "./useEffect"
+import "./useMemo"
